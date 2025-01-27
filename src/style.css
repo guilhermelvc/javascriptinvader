@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+/* Importa a fonte 'Press Start 2P' do Google Fonts para ser usada em todo o site */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", sans-serif; /* Fonte principal para todos os elementos */
+}
+/* O seletor '*' aplica as regras para todos os elementos da página:
+    - Remove margens e preenchimentos padrão (margin: 0, padding: 0)
+    - Define o box-sizing como 'border-box', garantindo que o tamanho do elemento inclui as bordas e o preenchimento.
+    - A fonte "Press Start 2P" é aplicada como a fonte principal do site */
+
+    canvas {
+        background-color: #121212;
+    }
+    /* Define o fundo do elemento canvas como um tom escuro (#121212), criando um visual de fundo para o jogo */
+    
+.screen {
+    width: 100%;
+    height: 100dvh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    inset: 0;
+}
+
+/* Estiliza os elementos com a classe .screen:
+    - A largura ocupa 100% da tela e a altura é definida como 100% da altura da janela (100dvh).
+    - A cor do texto é branca.
+    - Usa flexbox para centralizar os itens tanto horizontalmente (justify-content: center) quanto verticalmente (align-items: center).
+    - Flex direction: column organiza os itens em uma coluna.
+    - A posição é absoluta, preenchendo a tela inteira (inset: 0) */
+
+
+.screen h1 {
+   font-size: 2rem;
+    }
+    /* Estiliza o título dentro da tela inicial (h1):
+        - Define o tamanho da fonte como 2rem, que é um valor relativo ao tamanho da fonte base */
+    
+.screen span {
+    font-size: 0.6rem;
+    color: #aaa;
+    margin-top: auto;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+/* Estiliza a tag <span> dentro de .screen:
+    - Define o tamanho da fonte como 0.6rem.
+    - A cor do texto é cinza claro (#aaa).
+    - A margem superior é automática, empurrando o conteúdo para o final da tela.
+    - A margem inferior é de 20px para dar espaçamento.
+    - Aplica sublinhado no texto */
+
+
+.start-screen > div {
+    margin-top: auto;
+}
+
+/* Aplica uma margem superior automática para o <div> dentro da tela de início, empurrando os elementos para a parte inferior da tela */
+
+.button-play,
+.button-restart {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #ddd;
+    display: block;
+    margin: 20px auto 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Estiliza os botões com as classes .button-play e .button-restart:
+    - Remove a borda do botão (border: none).
+    - Define um preenchimento de 12px por 20px (padding).
+    - Adiciona bordas arredondadas com 5px de raio.
+    - O fundo do botão é cinza claro (#ddd).
+    - Define o display como bloco (block) para que o botão ocupe toda a largura disponível e tenha margens automáticas para centralização.
+    - Define o tamanho da fonte como 1rem.
+    - Define o cursor como pointer para indicar que o botão é clicável */
+
+.button-play:hover,
+.button-restart:hover {
+    background-color: #fff;
+}
+
+/* Define o estilo dos botões quando o mouse passa sobre eles (hover):
+    - Muda a cor de fundo para branco (#fff) */
+
+.game-over {
+    scale: 0;
+    animation: zoom 2s ease-in-out forwards;
+}
+/* Aplica um efeito de animação na tela de Game Over:
+    - Inicialmente, escala o elemento para 0 (invisível).
+    - A animação chamada "zoom" é aplicada, aumentando o elemento até o tamanho normal em 2 segundos, com uma transição suave (ease-in-out) */
+
+.score-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: none;
+}
+
+/* Estiliza a área de exibição do placar:
+    - Define a posição como fixa (fixed), para que o placar fique no topo da tela mesmo ao rolar a página.
+    - A cor do texto é branca (#fff).
+    - A largura ocupa 100% da tela.
+    - O texto é centralizado (text-align: center).
+    - Adiciona 40px de preenchimento.
+    - O texto é transformado para maiúsculas (text-transform: uppercase).
+    - Define o tamanho da fonte como 1rem.
+    - Inicialmente, a exibição é oculta (display: none) */
+
+.score-ui > div {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estiliza o <div> dentro de .score-ui:
+    - Usa flexbox para distribuir o conteúdo de forma equidistante entre os itens (justify-content: space-between).
+    - Limita a largura máxima do <div> a 600px.
+    - Centraliza o <div> com a margem automática (margin: 0 auto) */
+
+.instructions {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.6rem;
+    font-family: "Press Start 2P", sans-serif; /* Fonte consistente com o nome */
+}
+
+/* Estiliza o elemento de instruções:
+    - O texto é centralizado.
+    - A margem superior é definida como 30px.
+    - O tamanho da fonte é 0.6rem, correspondente ao texto do nome.
+    - A fonte "Press Start 2P" é usada para manter consistência */
+
+.instructions h2 {
+    font-size: 0.5rem;
+    margin-bottom: 20px; /* Adiciona um espaçamento maior entre o título e o conteúdo */
+}
+/* Estiliza o título dentro da seção de instruções (h2):
+    - O tamanho da fonte é definido como 0.5rem.
+    - A margem inferior é 20px para separar o título do texto subsequente */
+
+.instructions p {
+    margin-bottom: 10px;
+}
+
+/* Define uma margem inferior de 10px para os parágrafos dentro das instruções, separando-os dos elementos seguintes */
+
+.instructions ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+/* Estiliza as listas não ordenadas dentro da seção de instruções:
+    - Remove os marcadores de lista (list-style-type: none).
+    - Remove o preenchimento (padding) e a margem superior de 10px */
+
+.instructions ul li {
+    margin-bottom: 5px;
+}
+/* Adiciona uma margem inferior de 5px a cada item de lista dentro da seção de instruções */
+
+.instructions p strong {
+    font-size: 0.6rem;
+    margin-bottom: 10px;
+}
+
+
+/* Estiliza os elementos <strong> dentro dos parágrafos da seção de instruções:
+    - O tamanho da fonte é 0.6rem, mantendo consistência com o resto do texto.
+    - Adiciona uma margem inferior de 10px */
+
+    .button-pause {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 0.7rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #444;
+        color: white;
+        cursor: pointer;
+        z-index: 10;
+    }
+    
+    .button-pause:hover {
+        background-color: #666;
+    }
+
+@keyframes zoom {
+    from {
+        scale: 0;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+/* Define uma animação chamada "zoom":
+    - A animação começa com o elemento escalado em 0 (invisível).
+    - Finaliza com o elemento em seu tamanho normal (scale: 1) */
+
+    /* Aplica um layout global responsivo */
+html, body {
+    width: 100%;          /* Ocupa 100% da largura da janela */
+    height: 100%;         /* Ocupa 100% da altura da janela */
+    overflow: hidden;     /* Remove qualquer barra de rolagem */
+}
+
+canvas {
+    display: block;       /* Garante que o canvas não crie margens adicionais */
+    max-width: 100%;      /* Faz com que o canvas respeite os limites da largura da janela */
+    max-height: 100%;     /* Faz com que o canvas respeite os limites da altura da janela */
+}
+
+.screen {
+    width: 100%;          /* Ocupa toda a largura da tela */
+    height: 100%;         /* Ocupa toda a altura da tela */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;     /* Impede que conteúdos adicionais criem barras de rolagem */
+}
+
+/* Adiciona responsividade para botões */
+.button-play,
+.button-restart {
+    max-width: 80%;       /* Garante que os botões se ajustem à largura da tela */
+    font-size: clamp(0.8rem, 2vw, 1.5rem); /* Tamanho da fonte adaptável */
+}
+
+/* Responsividade do título */
+.screen h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Tamanho dinâmico */
+}
+
+/* Ajusta o placar de forma responsiva */
+.score-ui {
+    font-size: clamp(0.8rem, 0.9vw, 1.2rem); /* Tamanho do texto responsivo */
+    padding: 20px 10px; /* Espaçamento mais ajustado */
+}
+
+/* Responsividade para as instruções */
+.instructions {
+    margin: 10px;
+    font-size: clamp(0.4rem, 1vw, 0.8rem); /* Ajusta dinamicamente o texto */
+}

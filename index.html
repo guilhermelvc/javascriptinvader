@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>JavaScript Invader</title>
+    <link rel="icon" type="image/x-icon" href="/src/assets/images/spaceship.png">
+</head>
+<body>
+    <section class="score-ui">
+        <div>
+            <span class="score">Placar: <span>0</span></span>
+            <span class="level">Nível: <span>1</span></span>
+            <span class="high">Recorde: <span>0</span></span>
+            <span class="life">Vida: <span>3</span></span>
+            <div class="power">Power-up: <span>0</span></div>
+        </div>
+    </section>
+
+    <section class="start-screen screen">
+        <div>
+            <h1>JavaScript Invader</h1>
+            <button class="button-play">Play</button>
+        </div>
+        
+        <span>by Guilherme Lara Vieira Carvalho</span>
+        
+        <!-- Adicionando as instruções para o jogador -->
+        <div class="instructions">
+            <h2>Instruções</h2>
+            <p><strong>Objetivo:</strong> Defenda a Terra derrotando os invasores espaciais!</p>
+            <p><strong>Comandos:</strong></p>
+            <ul>
+                <li><strong>A</strong>: Mover para a esquerda</li>
+                <li><strong>D</strong>: Mover para a direita</li>
+                <li><strong>Enter</strong>: Atirar</li>
+            </ul>
+            <ul></ul>
+            <p><strong>Vencer:</strong> Derrote todos os invasores e colete "power-ups" para aumentar seu poder!</p>
+        </div>
+    </section>
+
+    <section class="game-over screen">
+        <div>
+            <h1>Game Over</h1>
+            <button class="button-restart">Restart</button>
+        </div>
+    </section>
+
+   
+<!-- Botão de pausa da música -->
+<button id="toggle-music" class="button-pause">Pause música</button>
+
+
+    <canvas></canvas>
+
+    <script>
+        window.onload = function() {
+            var themeMusic = new Audio('src/assets/audios/theme.mp3');
+            themeMusic.loop = true;
+            themeMusic.volume = 0.1; // Ajuste o volume aqui, 0.3 é 30% do volume máximo
+            themeMusic.play();
+        };
+    </script>
+
+    <script type="module" src="src/index.js"></script>
+</body>
+</html>
